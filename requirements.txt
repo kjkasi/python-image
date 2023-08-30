@@ -1,4 +1,4 @@
-fastapi==0.103.0
+fastapi
 fastapi_filter
 uvicorn
 pyodbc
