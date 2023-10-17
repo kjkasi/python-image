@@ -17,7 +17,7 @@ jobs:
         with:
           images: kjkasi/python-image
           tags: |
-            type=raw,value={{date 'DDMMYYYY'}}
+            type=raw,value={{date 'DDMMYY'}}
             type=raw,value=latest
       -
         name: Set up QEMU
