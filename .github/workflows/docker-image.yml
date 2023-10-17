@@ -11,6 +11,14 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       -
+        name: Docker meta
+        id: meta
+        uses: docker/metadata-action@v4
+        with:
+          images: name/app
+          tags: |
+            type=raw,value={{date 'YYYYMMDD'}}
+      -
         name: Set up QEMU
         uses: docker/setup-qemu-action@v2
       -
@@ -27,4 +35,4 @@ jobs:
         uses: docker/build-push-action@v4
         with:
           push: true
-          tags: kjkasi/python-image:{{date 'YYYYMMDD'}}
+          tags: kjkasi/python-image:${{ steps.meta.outputs.tags }}
