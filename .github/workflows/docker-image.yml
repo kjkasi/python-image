@@ -35,12 +35,5 @@ jobs:
         uses: docker/build-push-action@v4
         with:
           push: true
-          tags: ${{ steps.meta.outputs.tags }}
-          labels: ${{ steps.meta.outputs.labels }}
-      -
-        name: Build and push
-        uses: docker/build-push-action@v4
-        with:
-          push: true
-          tags: latest
+          tags: ${{ steps.meta.outputs.tags }} , latest
           labels: ${{ steps.meta.outputs.labels }}
