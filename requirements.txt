@@ -3,6 +3,7 @@ fastapi_filter
 uvicorn
 pyodbc
 pydantic
+pydantic-settings
 SQLAlchemy
 sqlalchemy-utils
 dependency-injector
