@@ -18,6 +18,7 @@ jobs:
           images: kjkasi/python-image
           tags: |
             type=raw,value={{date 'DDMMYYYY'}}
+            type=raw,value=latest
       -
         name: Set up QEMU
         uses: docker/setup-qemu-action@v2
@@ -35,5 +36,5 @@ jobs:
         uses: docker/build-push-action@v4
         with:
           push: true
-          tags: ${{ steps.meta.outputs.tags }} , latest
+          tags: ${{ steps.meta.outputs.tags }}
           labels: ${{ steps.meta.outputs.labels }}
